@@ -1,0 +1,51 @@
+make merchant account in khalti.com
+navigate to " payment integration " menu of toolbar.
+scroll down and you'll see a button for signup as merchant.
+- make a merchant account .
+find your test secret key
+find your test public key
+
+
+search khalti docs in google 
+go for  "client integration" section of sidedrawer of khalti docs
+select "web sdk" inside client integration.
+
+
+
+write in KhaltiKey.js(just see the code what i have done there).
+
+
+-----------
+inside clientIntegration >"web SDK" you will see a section describing about how you will "install with build tools"
+ie. you will see a section like 
+using yarn 
+  yarn add khalti-checkout-web
+using npkm 
+  npm install khalti-checkout-web --save
+=> copy npm i command and install the dependency 
+---------
+
+
+copy config object from that doc>client integration>web sdk> under "Install with build tools" title and 
+and paste in config.
+
+now see what extra codes i did on khalti.js and khalticonfig.js and khaltikey.js file.
+
+
+
+===
+check by putting khalti ph no and pin and verify otp and hitting submit.if you get object in console.log after submitting you khalti ph no and pin,
+then assume that your client side integration is complete
+
+
+
+===server side integration===
+go to khalti docs>server side integration > verification  and you will find integration code for node js.
+copy it and paste in KhaltiConfig.js file 
+dont forget to replace dummy token to  "payload.token" and dummy amount to "payload.amount" & 
+      let config = {
+        headers: {
+          Authorization:"dummy authorization key" to myKey.secretKey
+        },
+      }; 
+
